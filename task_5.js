@@ -8,10 +8,10 @@
 let sumPower = 0;
 
 class Device {
-    
-    constructor(power) {
+    constructor(power, name) {
         this.power = power;
         this.status = "off";
+        this.name = name;
     }
     switch() {
         if (this.status==="off"){
@@ -28,11 +28,10 @@ class Device {
     }
 }
 
-let lamp = new Device(25);
-let computer = new Device(125);
-let clock = new Device(5);
+const lamp = new Device(25, "Lamp");
+const computer = new Device(125, "Computer");
+const clock = new Device(5, "Clock");
 
-lamp.name = "Lamp";
 lamp.light = "blue";
 lamp.changeLight = function(){
     if(lamp.status==="on"){
@@ -51,11 +50,7 @@ lamp.changeLight = function(){
     return;
 }
 
-computer.name = "Computer";
 computer.processor = "Intel";
-
-clock.name = "Clock";
-
 
 lamp.switch();
 computer.switch();
@@ -64,6 +59,8 @@ clock.switch();
 lamp.changeLight();
 lamp.switch();
 lamp.changeLight();
+
+
     
 
 
